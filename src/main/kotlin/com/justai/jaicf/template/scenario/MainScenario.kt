@@ -2,6 +2,9 @@ package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.activator.caila.caila
 import com.justai.jaicf.builder.Scenario
+import com.justai.jaicf.channel.jaicp.dto.LiveChatSwitchReply
+import com.justai.jaicf.channel.jaicp.reactions.switchToLiveChat
+import com.justai.jaicf.reactions.jaicp.jaicpAsync
 
 val mainScenario = Scenario {
     state("start") {
@@ -46,6 +49,16 @@ val mainScenario = Scenario {
 
         action(caila) {
             activator.topIntent.answer?.let { reactions.say(it) } ?: reactions.go("/fallback")
+        }
+    }
+
+    state("Operator") {
+        activators {
+            regex("оператор")
+            regex("operator")
+        }
+        action {
+            reactions.jaicpAsync?.switchToLiveChat(LiveChatSwitchReply(closeChatPhrases = listOf("Хватит", "Стоп"), appendCloseChatButton = true))
         }
     }
 

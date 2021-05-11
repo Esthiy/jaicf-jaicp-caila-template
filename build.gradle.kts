@@ -30,6 +30,14 @@ dependencies {
     implementation("com.just-ai.jaicf:core:$jaicf")
     implementation("com.just-ai.jaicf:jaicp:$jaicf")
     implementation("com.just-ai.jaicf:caila:$jaicf")
+    implementation("com.just-ai.jaicf:yandex-alice:$jaicf")
+    implementation("com.just-ai.jaicf:telegram:$jaicf")
+    implementation("com.just-ai.jaicf:slack:$jaicf")
+    implementation("com.just-ai.jaicf:facebook:$jaicf")
+    implementation("com.just-ai.jaicf:alexa:$jaicf")
+    implementation("com.just-ai.jaicf:aimybox:$jaicf")
+    implementation("com.just-ai.jaicf:google-actions:$jaicf")
+    implementation("com.just-ai.jaicf:dialogflow:$jaicf")
 }
 
 tasks {
