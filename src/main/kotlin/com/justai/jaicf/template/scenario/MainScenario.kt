@@ -62,6 +62,31 @@ val mainScenario = Scenario {
         }
     }
 
+    state("alexa") {
+        activators {
+            intent("HelloWorldIntent")
+        }
+        action {
+            reactions.sayRandom(
+                "Алекса"
+            )
+            reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
+        }
+    }
+
+    state("HelloDialogFlow") {
+        activators {
+            intent("HelloDialogFlow")
+        }
+
+        action {
+            reactions.sayRandom(
+                "DIALOGFLOW ИНТЕНТ"
+            )
+            reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
+        }
+    }
+
     fallback {
         reactions.sayRandom(
             "Sorry, I didn't get that...",
